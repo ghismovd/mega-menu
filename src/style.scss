@@ -1,0 +1,88 @@
+// reset CSS
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+.mega_menu {
+	display: flex;
+	list-style-type: none;
+	width: 100%;
+	align-items: stretch;
+	justify-content: stretch;
+
+	& > div {
+		flex-grow: 1;
+		width: 100%;
+	}
+}
+
+.mega_menu__top-link {
+	padding: 0.5rem;
+	text-decoration: none;
+	background-color: lightblue;
+	display: block;
+	text-align: center;
+	overflow: hidden;
+
+	&:hover {
+		background-color: darkblue;
+		color: white;
+	}
+}
+
+.mega_menu__drop-down {
+	display: none;
+	position: absolute;
+	top: 34px;
+	left: 0;
+	right: 0;
+	height: 400px;
+	background-color: #f2f2f2;
+}
+
+.mega_menu__top-item:hover .mega_menu__drop-down {
+	display: block;
+}
+
+.mega_menu__drop2 {
+	padding: 0.5rem 1rem;
+	// display: inline-block;
+	width: 220px;
+
+	&:hover {
+		background-color: #003366;
+		color: white;
+	}
+}
+
+.mega_menu__drop-down2 {
+	// a bunch of properties
+	display: none;
+	position: absolute;
+	left: 220px;
+	top: 0;
+	right: 0;
+	height: 400px;
+	background-color: lightskyblue;
+}
+
+.mega_menu__drop2:hover .mega_menu__drop-down2 {
+	display: block;
+}
+
+.list {
+	display: flex;
+}
+
+.last-li a {
+	padding: 0.6rem 1.2rem;
+	text-decoration: none;
+	display: block;
+}
+
+.bold-link {
+	color: green;
+	font-weight: bold;
+}
