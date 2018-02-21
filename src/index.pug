@@ -4,11 +4,9 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Solving mega menu challenge
+        title Mega menu 
         link(href="style.css", rel="stylesheet")
     body
-        //- pre=JSON.stringify(data, null, 2)
-        //- div=data.link.message
         .mega_menu
             each menu, key1 in data.menu
                 .mega_menu__top-item
@@ -24,32 +22,32 @@ html(lang="en")
                                         .list
                                             ul.list-1
                                                 each item in menu2.list1
-                                                    li.last-li
-                                                        a(href=item.link, class=item.bold?'bold-link':'')=item.label
-                                            //- ul.list-2
-                                            //-     each item in menu2.list2
-                                            //-         li.last-li
-                                            //-             a(href=item.link, class=item.bold?'bold-link':'')=item.label
-        //- script.
-        //-     let menu = !{JSON.stringify(data.menu)}
-        //-     console.log(menu);
-        //-     document.querySelectorAll('.mega_menu__drop2')
-        //-             .forEach(mm => mm.addEventListener('mouseover', elem => {
-        //-                 const { key1, key2 } = elem.currentTarget.dataset;
-        //-                 let list1 = mm.querySelector('.mega_menu__drop-down2 .list-1')
-        //-                 //- console.log(key1, key2, list1);
-        //-                 list1.innerHTML = '';
+                                                    //- li.last-li
+                                                    //-     a(href=item.link, class=item.bold?'bold-link':'')=item.label
+                                            ul.list-2
+                                                each item in menu2.list2
+                                                    //- li.last-li
+                                                    //-     a(href=item.link, class=item.bold?'bold-link':'')=item.label
+        script.
+            let menu = !{JSON.stringify(data.menu)}
+            console.log(menu);
+            document.querySelectorAll('.mega_menu__drop2')
+                    .forEach(mm => mm.addEventListener('mouseover', elem => {
+                        const { key1, key2 } = elem.currentTarget.dataset;
+                        let list1 = mm.querySelector('.mega_menu__drop-down2 .list-1')
+                        //- console.log(key1, key2, list1);
+                        list1.innerHTML = '';
 
-        //-                 if (menu[key1].secondMenuItemList[key2].list1) {
-        //-                     menu[key1].secondMenuItemList[key2].list1.map(data => {
-        //-                         let liItem = document.createElement('li');
-        //-                         liItem.className = 'last-li';
-        //-                         let atag = document.createElement('a');
-        //-                         atag.href = data.link;
-        //-                         atag.innerText = data.label;
-        //-                         atag.className = data.bold ? 'bold-link':''
-        //-                         liItem.appendChild(atag);
-        //-                         list1.appendChild(liItem);
-        //-                     })
-        //-                 }
-        //-             }))
+                        if (menu[key1].secondMenuItemList[key2].list1) {
+                            menu[key1].secondMenuItemList[key2].list1.map(data => {
+                                let liItem = document.createElement('li');
+                                liItem.className = 'last-li';
+                                let atag = document.createElement('a');
+                                atag.href = data.link;
+                                atag.innerText = data.label;
+                                atag.className = data.bold ? 'bold-link':''
+                                liItem.appendChild(atag);
+                                list1.appendChild(liItem);
+                            })
+                        }
+                    }))
